@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     }
     
 
+    // MARK: - methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -24,18 +26,13 @@ class ViewController: UIViewController {
 
 
     fileprivate func updateUI() {
-      /*  if isLightOn {
-            view.backgroundColor = .white
-        } else {
-            view.backgroundColor = .black
-        } */
-            
         view.backgroundColor = isLightOn ? .white : .black
     }
     
-    @IBAction func buttonPresed() {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         isLightOn.toggle()
         updateUI()
     }
+    
 }
 
